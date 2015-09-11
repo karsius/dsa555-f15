@@ -1,3 +1,4 @@
+#include "timer.h"
 int iterativeFactorial(int n){
 	int rc=1;
 	for(i=n;i>=1;i--){
@@ -43,5 +44,10 @@ int power(int n);
 
 
 int main(void){
+	Timer t;
+	t.start();
+
 	int x=fact(4);
+	t.stop();
+	cout << t.currtime() << endl;
 }
