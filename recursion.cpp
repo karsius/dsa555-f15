@@ -39,7 +39,7 @@ int fib(int n);
 int iterativePower(int b,int n);
 
 //recursive power function
-int power(int n);
+int power(int b, int n);
 
 
 
