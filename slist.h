@@ -24,6 +24,7 @@ template <class T>
 class SList{
 	Node<T>* first_;
 	Node<T>* last_;
+	void rrwork(Node<T>* curr);
 public:
 	SList(){first_=last_=nullptr;}
 	Node<T>* first() const {return first_;}
@@ -91,6 +92,39 @@ void SList<T>::append(T data){
 	last_=nn;
 }
 
+
+template<class T>
+void SList<T>::reverse(){
+	Node* prev;
+	Node* curr;
+	Node* next;
+	//if statement is true, list has at 
+	//least 2 nodes
+	if(first_!=last_){
+		prev=first_;
+		curr=first_->next_;
+		next=curr->next_;
+		while(!curr){
+			curr->next_=prev;
+			prev=curr;
+			curr=next;
+			if(curr)
+				next=curr->next_;
+
+		}
+		first_->next_=nullptr;
+		last_=first_;
+		first_=prev;
+	}
+}
+
+template<class T>
+void SList::rrwork(Node<T>* curr);
+
+template<class T>
+void SList<T>::recursiveReverse(){
+	rrwork(first_);
+}
 
 
 template<class T>
