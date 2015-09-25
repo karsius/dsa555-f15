@@ -34,6 +34,8 @@ public:
 	void append(T data);
 	void rmFirst();
 	void rmLast();
+	void reverse();
+	void recursiveReverse();
 };
 //this function inserts data into the front
 //of the linked list
@@ -95,16 +97,16 @@ void SList<T>::append(T data){
 
 template<class T>
 void SList<T>::reverse(){
-	Node* prev;
-	Node* curr;
-	Node* next;
+	Node<T>* prev;
+	Node<T>* curr;
+	Node<T>* next;
 	//if statement is true, list has at 
 	//least 2 nodes
 	if(first_!=last_){
 		prev=first_;
 		curr=first_->next_;
 		next=curr->next_;
-		while(!curr){
+		while(curr){
 			curr->next_=prev;
 			prev=curr;
 			curr=next;
@@ -119,7 +121,9 @@ void SList<T>::reverse(){
 }
 
 template<class T>
-void SList::rrwork(Node<T>* curr);
+void SList<T>::rrwork(Node<T>* curr){
+
+}
 
 template<class T>
 void SList<T>::recursiveReverse(){
