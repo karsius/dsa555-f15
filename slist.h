@@ -30,6 +30,9 @@ public:
 	Node<T>* last() const {return last_;}
 	void insert(T data);
 	void print() const;
+	void append(T data);
+	void rmFirst();
+	void rmLast();
 };
 //this function inserts data into the front
 //of the linked list
@@ -41,6 +44,54 @@ void SList<T>::insert(T data){
 		last_=nn;
 	}
 }
+//remove first node from list
+template<class T>
+void SList<T>::rmFirst(){
+	if(first_){
+		Node<T>* rm=first_;
+		first_=first_->next_;
+		if(!first_){
+			last_=nullptr;
+		}
+		delete rm;
+	}
+}
+
+//remove last node from list
+template<class T>
+void SList<T>::rmLast(){
+	if(first_){
+		Node<T>* rm=last_;
+		Node<T>* curr=first_;
+		if(rm !=curr){
+			while(curr->next_!=rm){
+				curr=curr->next_;
+			}
+			last_=curr;
+			last_->next_=nullptr;
+		}
+		else{
+			first_=last_=nullptr;
+		}
+		delete rm;
+	}
+
+}
+
+//
+template<class T>
+void SList<T>::append(T data){
+	Node<T>* nn=new Node<T>(data);
+	if(first_){
+		last_->next_ = nn;
+	}
+	else{
+		first_=nn;
+	}
+	last_=nn;
+}
+
+
 
 template<class T>
 void SList<T>::print() const{

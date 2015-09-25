@@ -8,5 +8,8 @@ int main(void){
 	list.insert(6);
 	list.insert(1);
 	list.insert(2);
+	list.append(10);
+	list.rmFirst();
+	list.rmLast();
 	list.print();
 }
