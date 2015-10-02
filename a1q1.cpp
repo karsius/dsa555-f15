@@ -1,4 +1,3 @@
-
 #include "pixmap.h"
 /*this fill function is currently a stub (function that compiles and operates
   in some expected manner but doesn't actually work).  It only fills in the top left 10x10 pixel
