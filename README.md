@@ -10,7 +10,7 @@ First time (do this only the first time).
 
 * bring up a unix terminal (matrix, mac terminal, git bash... choice depends on your machine)
 * Go to the directory where you would like your code examples for this class to go (if you want it at top level, skip this step)
-* type: git clone https://github.com/cathyatseneca/dsa555-w15.git
+* type: git clone https://github.com/cathyatseneca/dsa555-f15.git
 
 This will create a directory called dsa555-f15 in your current directory.  Go into that for code updates
 
