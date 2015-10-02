@@ -125,7 +125,7 @@ void SList<T>::reverse(){
 template<class T>
 void SList<T>::rrwork(Node<T>* curr){
 	if(curr && curr->next_){
-		Node* tmp=curr->next_;
+		Node<T>* tmp=curr->next_;
 		//at least two nodes in list
 		rrwork(curr->next_);
 		tmp->next_=curr;
@@ -134,7 +134,7 @@ void SList<T>::rrwork(Node<T>* curr){
 
 template<class T>
 void SList<T>::recursiveReverse(){
-	if(curr){
+	if(first_){
 		Node<T>* tmp=first_;
 		rrwork(first_);
 		first_=last_;

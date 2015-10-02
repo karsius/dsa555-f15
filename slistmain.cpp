@@ -12,7 +12,7 @@ int main(void){
 //	list.rmFirst();
 //	list.rmLast();
 	list.print();
-	list.reverse();
+	list.recursiveReverse();
 
 	cout << "****** " << endl;
 	list.print();
