@@ -120,14 +120,27 @@ void SList<T>::reverse(){
 	}
 }
 
+//this function reverses a list starting
+//at node pointed to by curr
 template<class T>
 void SList<T>::rrwork(Node<T>* curr){
-
+	if(curr && curr->next_){
+		Node* tmp=curr->next_;
+		//at least two nodes in list
+		rrwork(curr->next_);
+		tmp->next_=curr;
+	}
 }
 
 template<class T>
 void SList<T>::recursiveReverse(){
-	rrwork(first_);
+	if(curr){
+		Node<T>* tmp=first_;
+		rrwork(first_);
+		first_=last_;
+		last_=tmp;
+		last_->next_=nullptr;
+	}
 }
 
 
